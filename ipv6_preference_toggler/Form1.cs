@@ -41,7 +41,6 @@ namespace ipv6_preference_toggler
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            RegistryKeyValue = (int?)Registry.GetValue(RegistryKeyPath, RegistryKeyName, null);
             InitializeComponentState();
         }
 
@@ -82,6 +81,8 @@ namespace ipv6_preference_toggler
                 $"{RegistryKeyPath}\\{RegistryKeyName}",
                 _resourceManager.GetString("null_value_warning_part_2")
             });
+
+            RegistryKeyValue = (int?)Registry.GetValue(RegistryKeyPath, RegistryKeyName, null);
 
             if (RegistryKeyValue == null)
             {
