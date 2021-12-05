@@ -1,0 +1,306 @@
+﻿<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_prefer_ipv4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="btn_prefer_ipv4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_prefer_ipv4.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btn_prefer_ipv4.Text" xml:space="preserve">
+    <value>Prefer IPv4 over IPv6</value>
+  </data>
+  <data name="&gt;&gt;btn_prefer_ipv4.Name" xml:space="preserve">
+    <value>btn_prefer_ipv4</value>
+  </data>
+  <data name="&gt;&gt;btn_prefer_ipv4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_prefer_ipv4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_prefer_ipv4.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btn_prefer_ipv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 12</value>
+  </data>
+  <data name="btn_prefer_ipv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>147, 23</value>
+  </data>
+  <data name="btn_prefer_ipv6.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btn_prefer_ipv6.Text" xml:space="preserve">
+    <value>Prefer IPv6 over IPv4</value>
+  </data>
+  <data name="&gt;&gt;btn_prefer_ipv6.Name" xml:space="preserve">
+    <value>btn_prefer_ipv6</value>
+  </data>
+  <data name="&gt;&gt;btn_prefer_ipv6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_prefer_ipv6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_prefer_ipv6.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lbl_horizontal_line.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 67</value>
+  </data>
+  <data name="lbl_horizontal_line.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 2</value>
+  </data>
+  <data name="lbl_horizontal_line.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbl_horizontal_line.Name" xml:space="preserve">
+    <value>lbl_horizontal_line</value>
+  </data>
+  <data name="&gt;&gt;lbl_horizontal_line.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_horizontal_line.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_horizontal_line.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbl_title_current_preference.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_title_current_preference.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 74</value>
+  </data>
+  <data name="lbl_title_current_preference.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 15</value>
+  </data>
+  <data name="lbl_title_current_preference.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="lbl_title_current_preference.Text" xml:space="preserve">
+    <value>Current preference: </value>
+  </data>
+  <data name="&gt;&gt;lbl_title_current_preference.Name" xml:space="preserve">
+    <value>lbl_title_current_preference</value>
+  </data>
+  <data name="&gt;&gt;lbl_title_current_preference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_title_current_preference.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_title_current_preference.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lbl_value_current_preference.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_value_current_preference.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 74</value>
+  </data>
+  <data name="lbl_value_current_preference.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 15</value>
+  </data>
+  <data name="lbl_value_current_preference.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="lbl_value_current_preference.Text" xml:space="preserve">
+    <value>label</value>
+  </data>
+  <data name="&gt;&gt;lbl_value_current_preference.Name" xml:space="preserve">
+    <value>lbl_value_current_preference</value>
+  </data>
+  <data name="&gt;&gt;lbl_value_current_preference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_value_current_preference.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_value_current_preference.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_view_in_regedit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 41</value>
+  </data>
+  <data name="btn_view_in_regedit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 23</value>
+  </data>
+  <data name="btn_view_in_regedit.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btn_view_in_regedit.Text" xml:space="preserve">
+    <value>View in regedit</value>
+  </data>
+  <data name="&gt;&gt;btn_view_in_regedit.Name" xml:space="preserve">
+    <value>btn_view_in_regedit</value>
+  </data>
+  <data name="&gt;&gt;btn_view_in_regedit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_view_in_regedit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_view_in_regedit.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_switch_language.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 72</value>
+  </data>
+  <data name="btn_switch_language.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 34</value>
+  </data>
+  <data name="btn_switch_language.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btn_switch_language.Text" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="&gt;&gt;btn_switch_language.Name" xml:space="preserve">
+    <value>btn_switch_language</value>
+  </data>
+  <data name="&gt;&gt;btn_switch_language.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_switch_language.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_switch_language.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl_current_value.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbl_current_value.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_current_value.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 91</value>
+  </data>
+  <data name="lbl_current_value.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 15</value>
+  </data>
+  <data name="lbl_current_value.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lbl_current_value.Text" xml:space="preserve">
+    <value>label</value>
+  </data>
+  <data name="&gt;&gt;lbl_current_value.Name" xml:space="preserve">
+    <value>lbl_current_value</value>
+  </data>
+  <data name="&gt;&gt;lbl_current_value.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_current_value.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_current_value.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbl_title_current_value.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 91</value>
+  </data>
+  <data name="lbl_title_current_value.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="lbl_title_current_value.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lbl_title_current_value.Text" xml:space="preserve">
+    <value>Current value:</value>
+  </data>
+  <data name="&gt;&gt;lbl_title_current_value.Name" xml:space="preserve">
+    <value>lbl_title_current_value</value>
+  </data>
+  <data name="&gt;&gt;lbl_title_current_value.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_title_current_value.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbl_title_current_value.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>329, 112</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Toggle If IPv6 Is Preferred</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
