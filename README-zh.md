@@ -11,6 +11,8 @@
 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters\DisabledComponents`
 来让系统在本机接口上首选使用IPv4来连接。
 
+也正因为这个工具需要修改注册表，所以需要以管理员权限来启动。
+
 ---
 
 参考文档：[为高级用户配置 Windows IPv6 的指南 - Microsoft](https://docs.microsoft.com/zh-cn/troubleshoot/windows-server/networking/configure-ipv6-in-windows)
