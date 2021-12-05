@@ -19,5 +19,8 @@ in order to set preferring using IPv4 on the native interfaces.
 
 You'll have to run it with the Administrator priveleges since it is reading and wring against the Registry.
 
+This utility is written with .NET 6.0 so you might need install the runtime before launching it. 
+You can download the .NET 6.0 runtime [here]https://dotnet.microsoft.com/download)
+
 Reference document: 
 [Guidance for configuring IPv6 in Windows for advanced users - Microsoft](https://docs.microsoft.com/en-us/troubleshoot/windows-server/networking/configure-ipv6-in-windows)

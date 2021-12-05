@@ -13,6 +13,8 @@
 
 也正因为这个工具需要修改注册表，所以需要以管理员权限来启动。
 
+这个工具是通过.NET 6.0构建的，所以你可能需要先安装.NET 6.0运行时。你可以在[这里](https://dotnet.microsoft.com/download)下载到.NET 6.0运行时库。
+
 ---
 
 参考文档：[为高级用户配置 Windows IPv6 的指南 - Microsoft](https://docs.microsoft.com/zh-cn/troubleshoot/windows-server/networking/configure-ipv6-in-windows)
