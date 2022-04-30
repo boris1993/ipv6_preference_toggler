@@ -81,7 +81,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_prefer_ipv4.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="btn_prefer_ipv6.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 12</value>
@@ -105,10 +105,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_prefer_ipv6.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="lbl_horizontal_line.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 67</value>
+    <value>0, 113</value>
   </data>
   <data name="lbl_horizontal_line.Size" type="System.Drawing.Size, System.Drawing">
     <value>345, 2</value>
@@ -126,13 +126,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_horizontal_line.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="lbl_title_current_preference.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_title_current_preference.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 74</value>
+    <value>12, 115</value>
   </data>
   <data name="lbl_title_current_preference.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 15</value>
@@ -153,13 +153,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_title_current_preference.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="lbl_value_current_preference.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_value_current_preference.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 74</value>
+    <value>119, 115</value>
   </data>
   <data name="lbl_value_current_preference.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 15</value>
@@ -180,7 +180,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_value_current_preference.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="btn_view_in_regedit.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 41</value>
@@ -204,13 +204,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_view_in_regedit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="btn_switch_language.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 72</value>
+    <value>242, 115</value>
   </data>
   <data name="btn_switch_language.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 34</value>
+    <value>75, 32</value>
   </data>
   <data name="btn_switch_language.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -228,7 +228,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_switch_language.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="lbl_current_value.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -238,7 +238,7 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_current_value.Location" type="System.Drawing.Point, System.Drawing">
-    <value>119, 91</value>
+    <value>119, 132</value>
   </data>
   <data name="lbl_current_value.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 15</value>
@@ -259,10 +259,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_current_value.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="lbl_title_current_value.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 91</value>
+    <value>12, 132</value>
   </data>
   <data name="lbl_title_current_value.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
@@ -283,7 +283,130 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_title_current_value.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-9, 67</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>345, 2</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblEthernetAdapter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEthernetAdapter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 69</value>
+  </data>
+  <data name="lblEthernetAdapter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 15</value>
+  </data>
+  <data name="lblEthernetAdapter.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="lblEthernetAdapter.Text" xml:space="preserve">
+    <value>Ethernet Adapter</value>
+  </data>
+  <data name="&gt;&gt;lblEthernetAdapter.Name" xml:space="preserve">
+    <value>lblEthernetAdapter</value>
+  </data>
+  <data name="&gt;&gt;lblEthernetAdapter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEthernetAdapter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblEthernetAdapter.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbNetworkAdapters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 87</value>
+  </data>
+  <data name="cbNetworkAdapters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 23</value>
+  </data>
+  <data name="cbNetworkAdapters.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;cbNetworkAdapters.Name" xml:space="preserve">
+    <value>cbNetworkAdapters</value>
+  </data>
+  <data name="&gt;&gt;cbNetworkAdapters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbNetworkAdapters.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbNetworkAdapters.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnEnableIPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 86</value>
+  </data>
+  <data name="btnEnableIPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnEnableIPv6.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnEnableIPv6.Text" xml:space="preserve">
+    <value>Enable IPv6</value>
+  </data>
+  <data name="&gt;&gt;btnEnableIPv6.Name" xml:space="preserve">
+    <value>btnEnableIPv6</value>
+  </data>
+  <data name="&gt;&gt;btnEnableIPv6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEnableIPv6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnEnableIPv6.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnDisableIPv6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDisableIPv6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 86</value>
+  </data>
+  <data name="btnDisableIPv6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 23</value>
+  </data>
+  <data name="btnDisableIPv6.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnDisableIPv6.Text" xml:space="preserve">
+    <value>Disable IPv6</value>
+  </data>
+  <data name="&gt;&gt;btnDisableIPv6.Name" xml:space="preserve">
+    <value>btnDisableIPv6</value>
+  </data>
+  <data name="&gt;&gt;btnDisableIPv6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDisableIPv6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDisableIPv6.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -292,7 +415,7 @@
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>329, 112</value>
+    <value>329, 154</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Toggle If IPv6 Is Preferred</value>

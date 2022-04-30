@@ -38,6 +38,11 @@
             this.btn_switch_language = new System.Windows.Forms.Button();
             this.lbl_current_value = new System.Windows.Forms.Label();
             this.lbl_title_current_value = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblEthernetAdapter = new System.Windows.Forms.Label();
+            this.cbNetworkAdapters = new System.Windows.Forms.ComboBox();
+            this.btnEnableIPv6 = new System.Windows.Forms.Button();
+            this.btnDisableIPv6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_prefer_ipv4
@@ -94,10 +99,48 @@
             resources.ApplyResources(this.lbl_title_current_value, "lbl_title_current_value");
             this.lbl_title_current_value.Name = "lbl_title_current_value";
             // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // lblEthernetAdapter
+            // 
+            resources.ApplyResources(this.lblEthernetAdapter, "lblEthernetAdapter");
+            this.lblEthernetAdapter.Name = "lblEthernetAdapter";
+            // 
+            // cbNetworkAdapters
+            // 
+            this.cbNetworkAdapters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNetworkAdapters.FormattingEnabled = true;
+            resources.ApplyResources(this.cbNetworkAdapters, "cbNetworkAdapters");
+            this.cbNetworkAdapters.Name = "cbNetworkAdapters";
+            this.cbNetworkAdapters.SelectedIndexChanged += new System.EventHandler(this.cbNetworkAdapters_SelectedIndexChanged);
+            // 
+            // btnEnableIPv6
+            // 
+            resources.ApplyResources(this.btnEnableIPv6, "btnEnableIPv6");
+            this.btnEnableIPv6.Name = "btnEnableIPv6";
+            this.btnEnableIPv6.UseVisualStyleBackColor = true;
+            this.btnEnableIPv6.Click += new System.EventHandler(this.btnEnableIPv6_Click);
+            // 
+            // btnDisableIPv6
+            // 
+            resources.ApplyResources(this.btnDisableIPv6, "btnDisableIPv6");
+            this.btnDisableIPv6.Name = "btnDisableIPv6";
+            this.btnDisableIPv6.UseVisualStyleBackColor = true;
+            this.btnDisableIPv6.Click += new System.EventHandler(this.btnDisableIPv6_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDisableIPv6);
+            this.Controls.Add(this.btnEnableIPv6);
+            this.Controls.Add(this.cbNetworkAdapters);
+            this.Controls.Add(this.lblEthernetAdapter);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_current_value);
             this.Controls.Add(this.lbl_title_current_value);
             this.Controls.Add(this.btn_switch_language);
@@ -129,5 +172,10 @@
         private Button btn_switch_language;
         private Label lbl_current_value;
         private Label lbl_title_current_value;
+        private Label label1;
+        private Label lblEthernetAdapter;
+        private ComboBox cbNetworkAdapters;
+        private Button btnEnableIPv6;
+        private Button btnDisableIPv6;
     }
 }

@@ -1,6 +1,8 @@
 using Microsoft.Win32;
 using System.Diagnostics;
 using System.Globalization;
+using System.Management.Automation;
+using System.Net.NetworkInformation;
 using System.Resources;
 
 namespace ipv6_preference_toggler
@@ -19,21 +21,26 @@ namespace ipv6_preference_toggler
         private readonly CultureInfo DefaultCultureInfo = CultureInfo.GetCultureInfo("en-US");
         private readonly CultureInfo ChineseCultureInfo = CultureInfo.GetCultureInfo("zh");
 
+        private readonly ResourceManager _chineseResourceManager;
+        private readonly ResourceManager _englishResourceManager;
         private ResourceManager _resourceManager;
-        private string NullValueWarning;
 
-        private int? RegistryKeyValue = null;
+        private int? _registryKeyValue = null;
+        private readonly Dictionary<string, NetworkInterface> _networkInterfaceNameAndIDLookup = new Dictionary<string, NetworkInterface>();
 
         public Form1()
         {
+            _englishResourceManager = new ResourceManager("ipv6_preference_toggler.Strings", typeof(Strings).Assembly);
+            _chineseResourceManager = new ResourceManager("ipv6_preference_toggler.Strings-zh", typeof(Strings_zh).Assembly);
+
             var currentUICulture = Thread.CurrentThread.CurrentUICulture;
             if (currentUICulture == ChineseCultureInfo)
             {
-                _resourceManager = new ResourceManager("ipv6_preference_toggler.Strings-zh", typeof(Strings_zh).Assembly);
+                _resourceManager = _chineseResourceManager;
             }
             else
             {
-                _resourceManager = new ResourceManager("ipv6_preference_toggler.Strings", typeof(Strings).Assembly);
+                _resourceManager = _englishResourceManager;
             }
 
             InitializeComponent();
@@ -41,6 +48,14 @@ namespace ipv6_preference_toggler
 
         private void Form1_Shown(object sender, EventArgs e)
         {
+            var networks = NetworkInterface
+                .GetAllNetworkInterfaces()
+                .Where(networkInterface => networkInterface.NetworkInterfaceType == NetworkInterfaceType.Ethernet)
+                .Where(networkInterface => networkInterface.OperationalStatus == OperationalStatus.Up)
+                .ToList();
+
+            networks.ForEach(network => _networkInterfaceNameAndIDLookup.Add(network.Name, network));
+
             InitializeComponentState();
         }
 
@@ -50,19 +65,13 @@ namespace ipv6_preference_toggler
             if (currentUICulture == ChineseCultureInfo)
             {
                 Thread.CurrentThread.CurrentUICulture = DefaultCultureInfo;
-                _resourceManager = new ResourceManager("ipv6_preference_toggler.Strings", typeof(Strings).Assembly);
+                _resourceManager = _englishResourceManager;
             }
             else
             {
                 Thread.CurrentThread.CurrentUICulture = ChineseCultureInfo;
-                _resourceManager = new ResourceManager("ipv6_preference_toggler.Strings-zh", typeof(Strings_zh).Assembly);
+                _resourceManager = _chineseResourceManager;
             }
-
-            NullValueWarning = string.Join(Environment.NewLine, new string[] {
-                _resourceManager.GetString("null_value_warning_part_1"),
-                $"{RegistryKeyPath}\\{RegistryKeyName}",
-                _resourceManager.GetString("null_value_warning_part_2")
-            });
 
             Controls.Clear();
             InitializeComponent();
@@ -76,38 +85,41 @@ namespace ipv6_preference_toggler
             lbl_value_current_preference.Text = "";
             lbl_current_value.Text = "";
 
-            NullValueWarning = string.Join(Environment.NewLine, new string[] {
+            var nullValueWarning = string.Join(Environment.NewLine, new string[] {
                 _resourceManager.GetString("null_value_warning_part_1"),
                 $"{RegistryKeyPath}\\{RegistryKeyName}",
                 _resourceManager.GetString("null_value_warning_part_2")
             });
 
-            RegistryKeyValue = (int?)Registry.GetValue(RegistryKeyPath, RegistryKeyName, null);
+            _registryKeyValue = (int?)Registry.GetValue(RegistryKeyPath, RegistryKeyName, null);
 
-            if (RegistryKeyValue == null)
+            if (_registryKeyValue == null)
             {
-                RegistryKeyValue = 0b00000000;
-                MessageBox.Show(NullValueWarning);
+                _registryKeyValue = 0b00000000;
+                MessageBox.Show(nullValueWarning);
             }
 
             UpdateCurrentPreferenceAndValueLabel();
+
+            cbNetworkAdapters.Items.AddRange(_networkInterfaceNameAndIDLookup.Keys.ToArray());
+            cbNetworkAdapters.SelectedIndex = 0;
         }
 
         private void FlipPreferredIPv4Flag(object sender, EventArgs e)
         {
-            RegistryKeyValue ^= (1 << 5);
+            _registryKeyValue ^= (1 << 5);
             UpdateCurrentPreferenceAndValueLabel();
 
-            Registry.SetValue(RegistryKeyPath, RegistryKeyName, RegistryKeyValue);
+            Registry.SetValue(RegistryKeyPath, RegistryKeyName, _registryKeyValue);
 
             MessageBox.Show(_resourceManager.GetString("value_updated"));
         }
 
         private void UpdateCurrentPreferenceAndValueLabel()
         {
-            lbl_current_value.Text = Convert.ToString((int)RegistryKeyValue, 2).PadLeft(8, '0');
+            lbl_current_value.Text = Convert.ToString((int)_registryKeyValue, 2).PadLeft(8, '0');
 
-            if ((RegistryKeyValue & PreferIPv4BitMask) == PreferIPv4BitMask)
+            if ((_registryKeyValue & PreferIPv4BitMask) == PreferIPv4BitMask)
             {
                 btn_prefer_ipv4.Enabled = false;
                 btn_prefer_ipv6.Enabled = true;
@@ -128,6 +140,80 @@ namespace ipv6_preference_toggler
             // So I have to point the last key to our RegistryKeyPath and then launch the regedit
             Registry.SetValue(LastKeyRegistryPath, LastKeyKeyName, RegistryKeyPath);
             Process.Start("regedit.exe");
+        }
+
+        private void cbNetworkAdapters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var networkInterfaceName = cbNetworkAdapters.SelectedItem.ToString();
+            if (!_networkInterfaceNameAndIDLookup.TryGetValue(networkInterfaceName!, out var networkInterface))
+            {
+                return;
+            }
+
+            if (networkInterface.Supports(NetworkInterfaceComponent.IPv6))
+            {
+                btnEnableIPv6.Enabled = false;
+                btnDisableIPv6.Enabled = true;
+            }
+            else
+            {
+                btnEnableIPv6.Enabled = true;
+                btnDisableIPv6.Enabled = false;
+            }
+        }
+
+        private void btnDisableIPv6_Click(object sender, EventArgs e)
+        {
+            var networkName = cbNetworkAdapters.SelectedItem.ToString();
+
+            Cursor.Current = Cursors.WaitCursor;
+
+            using (var powerShell = PowerShell.Create())
+            {
+                powerShell.AddScript($"Disable-NetAdapterBinding -Name '{networkName}' -ComponentID ms_tcpip6");
+                powerShell.Invoke();
+
+                if (powerShell.HadErrors)
+                {
+                    var errors = powerShell.Streams.Error.ToList();
+                    string errorMessage = "";
+                    errors.ForEach(error => errorMessage += ($"{error.ToString}\n"));
+
+                    MessageBox.Show(errorMessage);
+                }
+            }
+
+            Cursor.Current = Cursors.Default;
+
+            btnDisableIPv6.Enabled = false;
+            btnEnableIPv6.Enabled = true;
+        }
+
+        private void btnEnableIPv6_Click(object sender, EventArgs e)
+        {
+            var networkName = cbNetworkAdapters.SelectedItem.ToString();
+
+            Cursor.Current = Cursors.WaitCursor;
+
+            using (var powerShell = PowerShell.Create())
+            {
+                powerShell.AddScript($"Enable-NetAdapterBinding -Name '{networkName}' -ComponentID ms_tcpip6");
+                powerShell.Invoke();
+
+                if (powerShell.HadErrors)
+                {
+                    var errors = powerShell.Streams.Error.ToList();
+                    string errorMessage = "";
+                    errors.ForEach(error => errorMessage += ($"{error.ToString}\n"));
+
+                    MessageBox.Show(errorMessage);
+                }
+            }
+
+            Cursor.Current = Cursors.Default;
+
+            btnDisableIPv6.Enabled = true;
+            btnEnableIPv6.Enabled = false;
         }
     }
 }
